@@ -1,21 +1,5 @@
-// import { BookList } from './Booklist';
-
-// const favouriteBooks = [
-//   { id: "id-1", name: "JS for beginners" },
-//   { id: "id-2", name: "React basics" },
-//   { id: "id-3", name: "React Router overview" }
-// ];
-
-// export default function App() {
-//   return (
-//     <>
-//     	<h1>Books of the week</h1>
-//       <BookList books={favouriteBooks} />
-//     </>
-//   );
-// }
-
 import { Alert } from "./Alert";
+import { UserMenu } from "./UserMenu";
 
 export default function App() {
   return (
@@ -30,6 +14,7 @@ export default function App() {
       <Alert variant="warning" outlined elevated>
         Please update your profile contact information
       </Alert>
+      <UserMenu name="Mango" />
     </>
   );
 }
