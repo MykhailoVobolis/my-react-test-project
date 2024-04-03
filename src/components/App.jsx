@@ -1,30 +1,31 @@
-// import Modal from "./Modal";
+import LoginForm from "./LoginForm";
+import SearchBar from "./SearchBar";
+import LangSwitcher from "./LangSwitcher";
+import CoffeeSel from "./CoffeeSel";
 import { useState, useEffect } from "react";
 
 export default function App() {
-  const [clicks, setClicks] = useState(() => {
-    // Зчитуємо значення за ключем
-    const savedClicks = window.localStorage.getItem("saved-clicks");
+  // Колбек-функція для обробки сабміту форми
+  const handleLogin = (userData) => {
+    // Виконуємо необхідні операції з даними
+    console.log(userData);
+  };
 
-    // Якщо там щось є, повертаємо це
-    // значення як початкове значення стану
-    if (savedClicks !== null) {
-      return savedClicks;
-    }
-
-    // У протилежному випадку повертаємо
-    // яке-небудь значення за замовчуванням
-    return 0;
-  });
-
-  useEffect(() => {
-    window.localStorage.setItem("saved-clicks", clicks);
-  }, [clicks]);
+  const [lang, setLang] = useState("uk");
+  const [coffeeSize, setCoffeeSize] = useState("sm");
 
   return (
     <div>
-      <button onClick={() => setClicks(clicks + 1)}>You clicked {clicks} times</button>
-      <button onClick={() => setClicks(0)}>Reset</button>
+      <h1>Please login to your account!</h1>
+      {/* Передаємо колбек як пропс форми */}
+      <LoginForm onLogin={handleLogin} />
+      <SearchBar />
+      <>
+        <hr />
+        <h2>Selected language: {lang} </h2>
+        <LangSwitcher value={lang} onSelect={setLang} />
+      </>
+      <CoffeeSel value={coffeeSize} onSelect={setCoffeeSize} />
     </div>
   );
 }
