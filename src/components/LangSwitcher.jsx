@@ -1,4 +1,5 @@
-import { useId, useState } from "react";
+// Елемент Select
+import { useId } from "react";
 
 export default function LangSwitcher({ value, onSelect }) {
   const selectId = useId();

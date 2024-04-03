@@ -1,3 +1,4 @@
+// Login form
 import { useId } from "react";
 
 export default function LoginForm({ onLogin }) {
@@ -20,12 +21,16 @@ export default function LoginForm({ onLogin }) {
   const passwordId = useId();
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor={loginId}>Login</label>
-      <input type="text" name="login" />
-      <label htmlFor={passwordId}>Password</label>
-      <input type="password" name="password" />
-      <button type="submit">Log in</button>
-    </form>
+    <>
+      <h2>Login Form</h2>
+      <h3>Please login to your account!</h3>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor={loginId}>Login</label>
+        <input type="text" name="login" />
+        <label htmlFor={passwordId}>Password</label>
+        <input type="password" name="password" />
+        <button type="submit">Log in</button>
+      </form>
+    </>
   );
 }

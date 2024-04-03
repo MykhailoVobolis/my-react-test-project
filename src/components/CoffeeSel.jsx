@@ -1,5 +1,4 @@
-import { useId, useState } from "react";
-
+//Радіо-кнопки
 export default function CoffeeSel({ value, onSelect }) {
   const handleSizeChange = (evt) => {
     onSelect(evt.target.value);
@@ -8,7 +7,7 @@ export default function CoffeeSel({ value, onSelect }) {
   return (
     <>
       <hr />
-      <h2>Select coffee size</h2>
+      <h2>Select coffee size: {value}</h2>
       <label>
         <input type="radio" name="coffeeSize" value="sm" checked={value === "sm"} onChange={handleSizeChange} />
         Small
@@ -21,9 +20,6 @@ export default function CoffeeSel({ value, onSelect }) {
         <input type="radio" name="coffeeSize" value="lg" checked={value === "lg"} onChange={handleSizeChange} />
         Large
       </label>
-      <p>
-        <b>Selected size:</b> {value}
-      </p>
     </>
   );
 }

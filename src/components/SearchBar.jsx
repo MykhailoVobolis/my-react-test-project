@@ -1,17 +1,15 @@
-import { useState } from "react";
-
-export default function SearchBar() {
-  const [inputValue, setInputValue] = useState("");
-
+// Live input
+export default function SearchBar({ value, onInput }) {
   const handleChange = (evt) => {
-    setInputValue(evt.target.value);
+    onInput(evt.target.value);
   };
 
   return (
     <div>
       <hr />
-      <input type="text" value={inputValue} onChange={handleChange} />
-      <p>{inputValue}</p>
+      <h2>Live input</h2>
+      <input type="text" value={value} onChange={handleChange} />
+      <p>{value}</p>
     </div>
   );
 }
