@@ -3,6 +3,7 @@ import SearchBar from "./SearchBar";
 import LangSwitcher from "./LangSwitcher";
 import CoffeeSel from "./CoffeeSel";
 import TermsUse from "./TermsUse";
+import FeedbackForm from "./FeedbackForm";
 import { useState } from "react";
 
 export default function App() {
@@ -30,6 +31,7 @@ export default function App() {
       </>
       <CoffeeSel value={coffeeSize} onSelect={setCoffeeSize} />
       <TermsUse value={hasAccepted} onSelect={setHasAccepted} />
+      <FeedbackForm />
     </div>
   );
 }
